@@ -1,0 +1,14 @@
+encoding:     utf-8
+timezone:     Europe/London
+
+permalink:    /:categories/:title/
+
+markdown:     kramdown
+markdown_ext: md
+redcarpet:
+  extensions: []
+
+source:       .
+include:      []
+exclude:      ['Gemfile', 'Gemfile.lock', 'Procfile', 'README.md']
+destination:  ./_site
