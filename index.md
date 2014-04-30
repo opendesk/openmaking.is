@@ -3,4 +3,6 @@ title: "OpenMaking"
 layout: base
 ---
 
-What is Open Making?
+# Welcome
+
+This website is under construction.
