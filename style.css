@@ -8,7 +8,6 @@ body {
 }
 .nav-pills > li {
   padding: 0px 8px 4px;
-  margin-left: -8px;
 }
 .nav-pills > li > a {
   font-size: 110%;
