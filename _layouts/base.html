@@ -17,6 +17,14 @@
       <meta property="og:description" content="{{ page.excerpt }}" />
       <meta name="twitter:description" content="{{ page.excerpt }}" />
     {% endif %}
+    <meta property="og:image" content="/gfx/open_making_slide.png" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta name="twitter:image" content="/gfx/open_making_slide.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@open_making" />
+    <meta name="twitter:url" content="{{ site.url }}" />
     <link rel="stylesheet" type="text/css"
         href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
     />
@@ -28,32 +36,11 @@
           class="github-ribbon"
       />
     </a>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <br />
-          {{ content }}
-          <br />
-          <br />
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-offset-1 col-md-10">
-            <hr />
-            &copy; released into the
-            <a href="https://github.com/opendesk/openmaking.is/UNLICENSE">
-              public domain</a>.
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+    {{ content }}
+    <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
     </script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
-    </script>
-    <!--script src="script.js"></script-->
+    </script-->
+    <script src="script.js"></script>
   </body>
 </html>

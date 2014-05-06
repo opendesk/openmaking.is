@@ -1,0 +1,76 @@
+---
+layout: base
+---
+
+<section id="home" class="centered white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="statement">
+          <div class="statement-thin">
+            A field guide to
+          </div>
+          <div class="statement-thick">
+            Open Making
+          </div>
+          <div class="img-container making-bar">
+            <img src="/gfx/open_making_bar.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intro" class="centered grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+        <div class="intro-text">
+          {{ content }}
+        </div>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <ul class="nav nav-pills nav-justified">
+          {% for item in site.data.navigation %}
+            <li>
+              <a href="{{ item.path }}">{{ item.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="recent">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <div class="listing-header">
+          <div class="pull-right">
+            <div class="fake-tw-btn-container pull-right">
+              <div class="fake-tw-btn">
+                <a href="/feed.xml" title="Subscribe via RSS"
+                    class="btn fake-tw-btn-inner">
+                  <img src="/gfx/rss-icon.png" class="fake-tw-btn-icon" />
+                  <div class="fake-tw-btn-text">
+                    Subscribe via RSS</div></a>
+              </div>
+            </div>
+          </div>
+          <h2 class="first-heading">
+            Recent Articles
+          </h2>
+          <hr />
+        </div>
+        {% for post in site.posts %}
+          {% include post.partial.html %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include footer.partial.html %}

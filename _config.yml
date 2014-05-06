@@ -1,3 +1,7 @@
+name: OpenMaking.is
+description: A field guide to open making for designers and makers.
+url: http://www.openmaking.is
+
 encoding:     utf-8
 timezone:     Europe/London
 
@@ -10,5 +14,12 @@ redcarpet:
 
 source:       .
 include:      []
-exclude:      ['Gemfile', 'Gemfile.lock', 'Procfile', 'README.md']
+exclude:      [
+                'CNAME', 
+                'Gemfile', 
+                'Gemfile.lock', 
+                'Procfile',
+                'README.md', 
+                'UNLICENSE'
+              ]
 destination:  ./_site
