@@ -1,0 +1,13 @@
+<p class="metadata">
+  <span class="pull-right">
+    {% assign link = post.url %}
+    {% include link.partial.html %}
+    &nbsp;
+    {% include share.partial.html %}
+  </span>
+  {% assign date = post.date %}
+  {% include date.partial.html %}
+  by
+  {% assign author = site.data.authors[post.author] %}
+  {% include author.partial.html %}
+</p>

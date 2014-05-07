@@ -1,8 +1,10 @@
-- name: Concepts
-  path: /concepts
-- name: Designing
-  path: /designing
-- name: Making
-  path: /making
+- name: Home
+  path: /
+- name: Articles
+  path: /articles/
+- name: Videos
+  path: /videos/
+- name: Projects
+  path: /projects/
 - name: Contribute <span class="glyphicon glyphicon-edit"></span>
-  path: /CONTRIBUTING.html
+  path: /contribute/

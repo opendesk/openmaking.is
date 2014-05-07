@@ -1,5 +1,5 @@
 ---
-title: "OpenMaking"
+title: "OpenMaking.is"
 layout: home
 ---
 

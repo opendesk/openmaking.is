@@ -42,6 +42,12 @@ a, a:hover, a:focus {
 a.no-visual:hover, a.no-visual:focus {
   text-decoration: none;
 }
+p a {
+  font-weight: 600;
+}
+p a.no-visual {
+  font-weight: 400;
+}
 
 h2 {
   font-size: 26px;
@@ -49,15 +55,18 @@ h2 {
   letter-spacing: 0.015em;
 }
 h3 {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.015em;
 }
 p.description {
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 200;
 }
-
+p.metadata {
+  font-size: 12px;
+  font-style: italic;
+}
 ol {
   list-style-position: inside;
   margin: 0px; padding: 0px;
@@ -127,7 +136,15 @@ footer {
   padding: 1em 0em 0.5em;
 }
 .listing-item {
-  margin-bottom: 1em;
+  padding-bottom: 0.8em;
+  margin-bottom: 1.2em;
+  border-bottom: 1px solid #ffffef;
+}
+.listing-item h3.listing-title {
+  margin-bottom: 5px;
+}
+.listing-item p.description {
+  margin-bottom: 10px;
 }
 
 /* util */

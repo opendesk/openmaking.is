@@ -33,9 +33,13 @@ layout: base
       <div class="col-lg-offset-1 col-lg-10">
         <ul class="nav nav-pills nav-justified">
           {% for item in site.data.navigation %}
-            <li>
-              <a href="{{ item.path }}">{{ item.name }}</a>
-            </li>
+            {% if item.path != '/' %}
+              <li>
+                <a href="{{ item.path }}">
+                  <span class="no-wrap">
+                    {{ item.name }}</span></a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
         </div>
@@ -65,12 +69,13 @@ layout: base
               </div>
             </div>
             <h2 class="first-heading">
-              Recent Articles
+              Recent Posts
             </h2>
             <hr />
           </div>
           {% for post in site.posts %}
-            {% include post.partial.html %}
+            {% capture partial %}{{ post.layout }}.partial.html{% endcapture %}
+            {% include {{partial}} %}
           {% endfor %}
         </div>
       </div>

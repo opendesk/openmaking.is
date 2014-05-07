@@ -1,6 +1,7 @@
 ---
 title: "Contribute"
 layout: page
+permalink: /contribute/
 ---
 
 To contribute to this website please:

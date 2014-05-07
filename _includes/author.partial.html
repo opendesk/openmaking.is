@@ -1,0 +1,12 @@
+<span class="author">
+  <a href="{{ author.website }}" target="_blank">
+    {{ author.name }}</a>,
+  {{ author.job_title }}
+  {% if author.job_title_preposition %}
+    {{ author.job_title_preposition }}
+  {% else %}
+    of
+  {% endif %}
+  <a href="{{ author.organisation_website }}" target="_blank">
+    {{ author.organisation }}</a>.
+</span>
