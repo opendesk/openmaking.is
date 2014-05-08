@@ -7,6 +7,7 @@ author: thruflo
 layout: article
 categories:
 - articles
+tags:
 - designing
 ---
 

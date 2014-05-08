@@ -19,11 +19,11 @@ layout: main
   </h2>
 </div>
 
-<p>
-  {{ page.description }}
-</p>
-
-{{ content }}
-
-{% assign post = page %}
-{% include metadata.partial.html %}
+<div class="main-content">
+  <p>
+    {{ page.description }}
+  </p>
+  {{ content }}
+  {% assign post = page %}
+  {% include metadata.partial.html %}
+</div>

@@ -4,19 +4,19 @@ $(document).ready(
     $('.display-datetime').humaneDates({'lowercase': true});
     // Auto-resize videos to fit responsive column width.
     $('.main-content').fitVids();
-    // Handle the category navigation.
-    $('[data-target="articles"]').each(
+    // Handle the tag navigation.
+    $('.listing').each(
       function () {
         var $container = $(this);
         var $links = $($container.data('link-selector'));
         var $items = $container.find('.listing-item');
-        var set_active_state = function (token) {
+        var set_active_state = function (tag) {
           $links.each(
             function () {
               var $item = $(this);
               var $parent = $item.parent('li');
-              var target = $item.attr('href').split('#').slice(-1)[0];
-              if (token && token == target) {
+              var href_identifier = $item.attr('href').split('#').slice(-1)[0];
+              if (tag && tag == href_identifier) {
                 $parent.addClass('active');
               }
               else {
@@ -25,11 +25,12 @@ $(document).ready(
             }
           );
         } 
-        var filter_by_topic = function (topic) {
+        var filter_by_tag = function (tag) {
           $items.each(
             function () {
               var $item = $(this);
-              if (!topic || $item.hasClass(topic)) {
+              var tags = $item.data('tags').split(' ');
+              if (!tag || $.inArray(tag, tags) > -1) {
                 $item.show();
               }
               else {
@@ -38,15 +39,15 @@ $(document).ready(
             }
           );
         };
-        var handle_hash = function (only_if_topic_exists) {
-          var topic = '';
+        var handle_hash = function (only_if_tag_exists) {
+          var tag = '';
           if (location.hash) {
-            topic = location.hash.slice(1);
+            tag = location.hash.slice(1);
           }
-          if (topic || !only_if_topic_exists) {
-            filter_by_topic(topic);
+          if (tag || !only_if_tag_exists) {
+            filter_by_tag(tag);
           }
-          set_active_state(topic);
+          set_active_state(tag);
         };
         $(window).on('hashchange', handle_hash);
         handle_hash(true);

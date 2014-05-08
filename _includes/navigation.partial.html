@@ -8,8 +8,8 @@
       {% if item.path == '/articles/' and active == 'active' %}
         <ul class="nav">
           {% for topic in site.data.topics %}
-            {% if site.categories[topic.slug] %}
-              {% capture active_topic %}{% if page.categories contains topic.slug %}active{% endif %}{% endcapture %}
+            {% if site.tags[topic.slug] %}
+              {% capture active_topic %}{% if page.tags contains topic.slug %}active{% endif %}{% endcapture %}
               <li class="{{ active_topic }}">
                 <a href="/articles/#{{ topic.slug }}">
                   {{ topic.name }}</a>

@@ -17,7 +17,8 @@ layout: main
   </h2>
 </div>
 
-{{ content }}
-
-{% assign post = page %}
-{% include metadata.partial.html %}
+<div class="main-content">
+  {{ content }}
+  {% assign post = page %}
+  {% include metadata.partial.html %}
+</div>
