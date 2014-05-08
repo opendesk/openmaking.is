@@ -91,6 +91,10 @@ h2 {
   font-size: 26px;
   font-weight: 500;
   letter-spacing: 0.015em;
+  margin-bottom: 18px;
+}
+h2.first-heading {
+  margin-top: 2px;
 }
 h2 .glyphicon {
   margin: 3px 0.5em 0 1px;

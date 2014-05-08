@@ -10,7 +10,7 @@ layout: main
   </a>
 {% endif %}
 
-<h2 class="{% if !page.thumbnail %}first-heading{% endif %}">
+<h2 class="{% if page.thumbnail %}{% else %}first-heading{% endif %}">
   <a href="/projects/" class="no-visual">
     <span class="glyphicon glyphicon-link"></span></a>
   <a href="{{ page.website }}" class="no-visual">

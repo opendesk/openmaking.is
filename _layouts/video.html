@@ -5,16 +5,35 @@ layout: main
 <h2 class="first-heading">
   <a href="/videos/" class="no-visual">
     <span class="glyphicon glyphicon-facetime-video"></span></a>
-  <a href="{{ page.url }}" class="no-visual">
-    {{ page.title }}</a>
+  {% if page.source == 'youtube' %}
+    <a href="https://www.youtube.com/watch?v={{ page.source_id }}"
+        class="no-visual">
+  {% elsif page.source == 'vimeo' %}
+    <a href="http://vimeo.com/{{ page.source_id }}"
+        class="no-visual">
+  {% endif %}
+  {{ page.title }}</a>
 </h2>
 
-{% if page.source == 'youtube' %}
-<iframe width="560" height="315"
-    src="//www.youtube.com/embed/{{ page.source_id }}"
-    frameborder="0"
-    allowfullscreen>
-</iframe>
-{% endif %}
+<p>
+  {% if page.source == 'youtube' %}
+    <iframe width="560" height="315"
+        src="//www.youtube.com/embed/{{ page.source_id }}"
+        frameborder="0"
+        webkitallowfullscreen
+           mozallowfullscreen
+              allowfullscreen>
+    </iframe>
+  {% elsif page.source == 'vimeo' %}
+    <iframe src="//player.vimeo.com/video/70571785"
+        width="560"
+        height="315"
+        frameborder="0"
+        webkitallowfullscreen
+           mozallowfullscreen
+              allowfullscreen>
+    </iframe>
+  {% endif %}
+</p>
 
 {{ content }}
