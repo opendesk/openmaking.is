@@ -7,7 +7,6 @@ author: thruflo
 layout: article
 categories:
 - articles
-topics:
 - concepts
 ---
   
