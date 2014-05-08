@@ -114,6 +114,11 @@ p.metadata {
   font-size: 12px;
   font-weight: 300;
 }
+footer p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
 ol {
   list-style-position: inside;
   margin: 0px; padding: 0px;
