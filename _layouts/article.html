@@ -10,10 +10,12 @@ layout: main
   </a>
 {% endif %}
 
-<h2 class="{% if page.thumbnail %}{% else %}first-heading{% endif %}">
-  <a href="{{ page.url }}" class="no-visual">
-    {{ page.title }}</a>
-</h2>
+<div class="page-header">
+  <h2 class="{% if page.thumbnail %}{% else %}first-heading{% endif %}">
+    <a href="{{ page.url }}" class="no-visual">
+      {{ page.title }}</a>
+  </h2>
+</div>
 
 {{ content }}
 

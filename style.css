@@ -236,8 +236,9 @@ footer {
 .page-content {
   padding: 0 8px;
 }
-.listing-header {
+.page-header {
   padding: 1em 0em 0em;
+  margin: 0 0 2em;
 }
 .listing-item {
   padding-bottom: 0.8em;

@@ -52,7 +52,7 @@ layout: base
     <div class="row">
       <div class="col-lg-offset-1 col-lg-10">
         <div class="page-content">
-          <div class="listing-header clearfix">
+          <div class="page-header clearfix">
             <div class="pull-right">
               <div class="fake-tw-btn-container pull-right">
                 <div class="fake-tw-btn">
@@ -83,7 +83,6 @@ layout: base
             <h2 class="first-heading">
               Recent Posts
             </h2>
-            <hr />
           </div>
           {% for post in site.posts limit:10 %}
             {% include post.partial.html %}

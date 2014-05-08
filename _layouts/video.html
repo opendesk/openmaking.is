@@ -2,18 +2,20 @@
 layout: main
 ---
 
-<h2 class="first-heading">
-  <a href="/videos/" class="no-visual">
-    <span class="glyphicon glyphicon-facetime-video"></span></a>
-  {% if page.source == 'youtube' %}
-    <a href="https://www.youtube.com/watch?v={{ page.source_id }}"
-        class="no-visual">
-  {% elsif page.source == 'vimeo' %}
-    <a href="http://vimeo.com/{{ page.source_id }}"
-        class="no-visual">
-  {% endif %}
-  {{ page.title }}</a>
-</h2>
+<div class="page-header">
+  <h2 class="first-heading">
+    <a href="/videos/" class="no-visual">
+      <span class="glyphicon glyphicon-facetime-video"></span></a>
+    {% if page.source == 'youtube' %}
+      <a href="https://www.youtube.com/watch?v={{ page.source_id }}"
+          class="no-visual">
+    {% elsif page.source == 'vimeo' %}
+      <a href="http://vimeo.com/{{ page.source_id }}"
+          class="no-visual">
+    {% endif %}
+    {{ page.title }}</a>
+  </h2>
+</div>
 
 <p>
   {% if page.source == 'youtube' %}
