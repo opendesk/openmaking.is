@@ -1,21 +1,22 @@
 <ul class="nav nav-sidebar nav-stacked">
   {% for item in site.data.navigation %}
-    {% capture active %}
-      {% if item.exact and page.url == item.path %}
-        active
-      {% else %}
-        {% for cat in page.categories %}
-          {% if cat == item.category %}
-            active
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    {% endcapture %}
+    {% capture active %}{% if item.exact and page.url == item.path %}active{% elsif page.categories contains item.category %}active{% endif %}{% endcapture %}
     <li class="{{ active }}">
       <a href="{{ item.path }}">
         <span class="no-wrap">
           {{ item.name }}</span></a>
-      {% if item.path == '/contribute/' and page.url == item.path %}
+      {% if item.path == '/articles/' and active == 'active' %}
+        <ul class="nav">
+          {% for topic in site.data.topics %}
+            {% capture active_topic %}{% if page.topics contains topic.slug %}active{% endif %}{% endcapture %}
+            <li class="{{ active_topic }}">
+              <a href="/articles/#{{ topic.slug }}">
+                {{ topic.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if item.path == '/contribute/' and active == 'active' %}
         <ul class="nav">
           {% for section in item.sections %}
             <li>

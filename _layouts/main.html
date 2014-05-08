@@ -22,8 +22,10 @@ layout: base
   <div class="container">
     <div class="row">
       <div class="col-sm-9 col-md-8">
-        <div class="">
+        <div class="main-content">
           {{ content }}
+          {% assign post = page %}
+          {% include metadata.partial.html %}
         </div>
       </div>
       <div class="col-sm-3 col-md-4">

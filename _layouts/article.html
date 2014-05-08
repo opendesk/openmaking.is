@@ -2,9 +2,15 @@
 layout: main
 ---
 
-<h2 class="first-heading">
-  <a href="/articles/" class="no-visual">
-    <span class="glyphicon glyphicon-send"></span></a>
+{% if page.thumbnail %}
+  <a href="{{ page.url }}" class="no-visual">
+    <figure>
+      <img src="{{ page.thumbnail }}" />
+    </figure>
+  </a>
+{% endif %}
+
+<h2 class="{% if !page.thumbnail %}first-heading{% endif %}">
   <a href="{{ page.url }}" class="no-visual">
     {{ page.title }}</a>
 </h2>

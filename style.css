@@ -63,6 +63,11 @@ figure img {
   margin-left: 2px;
   border-left: 2px solid #000;
 }
+.nav-sidebar > li.active > ul.nav > li.active > a,
+.nav-sidebar > li.active > ul.nav > li > a:hover,
+.nav-sidebar > li.active > ul.nav > li > a:focus {
+  background-color: rgba(0,0,0,0.05);
+}
 
 a, a:hover, a:focus {
   color: black;
@@ -148,6 +153,12 @@ section {
   /*background-color: #f5f3f1;
   background-color: rgb(248, 248, 246);*/
   background-color: rgba(0,0,0,0.05);
+}
+.main-content {
+  margin-bottom: 1em;
+}
+.main-content .metadata {
+  padding: 2em 0 1em;
 }
 footer {
   padding: 1em 0 3em;

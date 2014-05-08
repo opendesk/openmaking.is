@@ -2,11 +2,19 @@
 layout: main
 ---
 
-<h2 class="first-heading">
+{% if page.thumbnail %}
+  <a href="{{ page.website }}" class="no-visual">
+    <figure>
+      <img src="{{ page.thumbnail }}" />
+    </figure>
+  </a>
+{% endif %}
+
+<h2 class="{% if !page.thumbnail %}first-heading{% endif %}">
   <a href="/projects/" class="no-visual">
-    <span class="glyphicon glyphicon-folder-close"></span></a>
-  <a href="{{ page.url }}" class="no-visual">
-    {{ page.title }}</a>
+    <span class="glyphicon glyphicon-link"></span></a>
+  <a href="{{ page.website }}" class="no-visual">
+    {{ page.title }} &mdash; {{ page.website }}</a>
 </h2>
 
 {{ content }}
