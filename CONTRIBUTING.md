@@ -76,7 +76,8 @@ Follow the same naming convention as the existing files, which means:
 
 Then paste the content you copied from the existing file into the new file,
 edit the metadata at the top (keeping to the same [obvious syntax][]) and
-edit the content of the post using [Markdown][].
+edit the content of the post using [Markdown][]. The first paragraph of the
+content is used by default as the listing description.
 
 ### Markdown
 
