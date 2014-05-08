@@ -17,30 +17,26 @@ layout: main
   </h2>
 </div>
 
-<p class="video-wrapper">
-  {% if page.source == 'youtube' %}
-    <iframe width="560" height="315"
-        src="//www.youtube.com/embed/{{ page.source_id }}"
-        frameborder="0"
-        webkitallowfullscreen
-           mozallowfullscreen
-              allowfullscreen>
-    </iframe>
-  {% elsif page.source == 'vimeo' %}
-    <iframe src="//player.vimeo.com/video/{{ page.source_id }}"
-        width="560"
-        height="315"
-        frameborder="0"
-        webkitallowfullscreen
-           mozallowfullscreen
-              allowfullscreen>
-    </iframe>
-  {% endif %}
-</p>
-
 <div class="main-content">
-  <p>
-    {{ page.description }}
+  <p class="video-wrapper">
+    {% if page.source == 'youtube' %}
+      <iframe width="560" height="315"
+          src="//www.youtube.com/embed/{{ page.source_id }}"
+          frameborder="0"
+          webkitallowfullscreen
+             mozallowfullscreen
+                allowfullscreen>
+      </iframe>
+    {% elsif page.source == 'vimeo' %}
+      <iframe src="//player.vimeo.com/video/{{ page.source_id }}"
+          width="560"
+          height="315"
+          frameborder="0"
+          webkitallowfullscreen
+             mozallowfullscreen
+                allowfullscreen>
+      </iframe>
+    {% endif %}
   </p>
   {{ content }}
   {% assign post = page %}

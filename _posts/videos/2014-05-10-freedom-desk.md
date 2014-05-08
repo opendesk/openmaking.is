@@ -1,8 +1,5 @@
 ---
 title: FreedomDesk
-description: |
-    Modular CNC desk specially designed for "Design Thinkers". Flexible assembly
-    for workgroups and brainstorming sessions, made from a single material.
 author: thruflo
 layout: video
 source: vimeo
@@ -11,3 +8,6 @@ thumbnail: /gfx/freedom-desk.jpg
 categories:
 - videos
 ---
+
+Modular CNC desk specially designed for "Design Thinkers". Flexible assembly
+for workgroups and brainstorming sessions, made from a single material.

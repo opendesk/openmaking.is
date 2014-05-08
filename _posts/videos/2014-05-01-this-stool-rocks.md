@@ -1,8 +1,5 @@
 ---
 title: This Stool Rocks
-description: |
-    Kickstarter video by James McBennett introducing Fabsie and his
-    personalisable, digitally manufactured rocking stool.
 author: thruflo
 layout: video
 source: vimeo
@@ -11,3 +8,6 @@ thumbnail: /gfx/fabsie.jpg
 categories:
 - videos
 ---
+
+Kickstarter video by James McBennett introducing Fabsie and his
+personalisable, digitally manufactured rocking stool.

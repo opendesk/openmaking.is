@@ -31,9 +31,15 @@
           {% endif %}
           {{ post.title }}
         </h3>
-        <p class="description">
-          {{ post.description }}
-        </p>
+        <div class="description">
+          {% if post.description %}
+            <p>
+              {{ post.description }}
+            </p>
+          {% else %}
+            {{ post.excerpt }}
+          {% endif %}
+        </div>
       </a>
     </div>
   </div>

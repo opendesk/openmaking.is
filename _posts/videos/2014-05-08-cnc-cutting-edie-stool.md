@@ -1,8 +1,5 @@
 ---
 title: CNC Cutting Edie Stool
-description: |
-    Tongue in cheek video from Pedro Terra Lab in Brasil showing CNC
-    cutting and dispatch of a Valchromat Edie Stool.
 author: thruflo
 layout: video
 source: vimeo
@@ -12,3 +9,5 @@ categories:
 - videos
 ---
 
+Tongue in cheek video from Pedro Terra Lab in Brasil showing CNC
+cutting and dispatch of a Valchromat Edie Stool.

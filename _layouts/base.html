@@ -9,14 +9,13 @@
     <meta property="og:title" content="{{ page.title }}" />
     <meta name="twitter:title" content="{{ page.title }}" />
     {% if page.description %}
-      <meta name="description" content="{{ page.description }}" />
-      <meta property="og:description" content="{{ page.description }}" />
-      <meta name="twitter:description" content="{{ page.description }}" />
+      {% assign description = page.description %}
     {% else %}
-      <meta name="description" content="{{ page.excerpt }}" />
-      <meta property="og:description" content="{{ page.excerpt }}" />
-      <meta name="twitter:description" content="{{ page.excerpt }}" />
+      {% assign description = page.excerpt | strip_html %}
     {% endif %}
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta name="twitter:description" content="{{ description }}" />
     <meta property="og:image" content="/gfx/open_making_slide.png" />
     <meta property="og:site_name" content="{{ site.name }}" />
     <meta property="og:type" content="website" />
