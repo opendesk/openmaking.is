@@ -1,4 +1,4 @@
-<div class="listing-item">
+<div class="listing-item{% for category in post.categories %} {{ category }}{% endfor %}">
   {% if post.thumbnail %}
     <div class="visible-xs">
       <a href="{{ post.url }}" class="no-visual">

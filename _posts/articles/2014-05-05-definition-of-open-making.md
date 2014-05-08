@@ -10,4 +10,4 @@ categories:
 - concepts
 ---
   
-Lorem...
+Coming soon.

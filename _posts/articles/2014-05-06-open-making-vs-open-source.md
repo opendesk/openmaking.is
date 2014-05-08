@@ -11,4 +11,4 @@ categories:
 - legal
 ---
   
-Lorem...
+Coming soon.

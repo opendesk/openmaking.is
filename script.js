@@ -1,7 +1,40 @@
 $(document).ready(
   function () {
+    // Make dates human readable.
     $('.display-datetime').humaneDates({'lowercase': true});
+    // Auto-resize videos to fit responsive column width.
     $('.main-content').fitVids();
+    // Handle the category navigation.
+    $('[data-target="articles"]').each(
+      function () {
+        var $container = $(this);
+        var $items = $container.find('.listing-item');
+        var filter_by_topic = function (topic) {
+          $items.each(
+            function () {
+              var $item = $(this);
+              if (!topic || $item.hasClass(topic)) {
+                $item.show();
+              }
+              else {
+                $item.hide();
+              }
+            }
+          );
+        };
+        var filter_by_hash = function (only_if_topic_exists) {
+          var topic = '';
+          if (location.hash) {
+            topic = location.hash.slice(1);
+          }
+          if (topic || !only_if_topic_exists) {
+            filter_by_topic(topic);
+          }
+        };
+        $(window).on('hashchange', filter_by_hash);
+        filter_by_hash(true);
+      }
+    );
   }
 );
 
