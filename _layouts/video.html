@@ -1,3 +1,20 @@
 ---
-layout: page
+layout: main
 ---
+
+<h2 class="first-heading">
+  <a href="/videos/" class="no-visual">
+    <span class="glyphicon glyphicon-facetime-video"></span></a>
+  <a href="{{ page.url }}" class="no-visual">
+    {{ page.title }}</a>
+</h2>
+
+{% if page.source == 'youtube' %}
+<iframe width="560" height="315"
+    src="//www.youtube.com/embed/{{ page.source_id }}"
+    frameborder="0"
+    allowfullscreen>
+</iframe>
+{% endif %}
+
+{{ content }}

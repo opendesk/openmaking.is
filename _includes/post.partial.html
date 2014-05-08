@@ -1,0 +1,40 @@
+<div class="listing-item">
+  {% if post.thumbnail %}
+    <div class="visible-xs">
+      <a href="{{ post.url }}" class="no-visual">
+        <div class="post-thumbnail media-object">
+          <img src="{{ post.thumbnail }}" />
+        </div>
+      </a>
+    </div>
+  {% endif %}
+  <div class="media">
+    {% if post.thumbnail %}
+      <div class="pull-left hidden-xs">
+        <a href="{{ post.url }}" class="no-visual">
+          <div class="post-thumbnail media-object">
+            <img src="{{ post.thumbnail }}" />
+          </div>
+        </a>
+      </div>
+    {% endif %}
+    <div class="media-body">
+      <a href="{{ post.url }}" class="no-visual">
+        <h3 class="first-heading listing-title">
+          {% if post.layout == 'video' %}
+            <span class="glyphicon glyphicon-facetime-video"></span>
+          {% elsif post.layout == 'project' %}
+            <span class="glyphicon glyphicon-folder-close"></span>
+          {% else %}
+            <span class="glyphicon glyphicon-send"></span>
+          {% endif %}
+          {{ post.title }}
+        </h3>
+        <p class="description">
+          {{ post.description }}
+        </p>
+      </a>
+    </div>
+  </div>
+  {% include metadata.partial.html %}
+</div>

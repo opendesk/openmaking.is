@@ -1,6 +1,20 @@
 thruflo:
   name: James Arthur
   website: http://thruflo.com
+  job_title: Developer
+  organisation: FabHub
+  organisation_website: https://www.fabhub.io
+
+nick_diaconou:
+  name: Nick Ierodiaconou
+  website: https://twitter.com/nick_diaconou
   job_title: Co-Founder
   organisation: OpenDesk
   organisation_website: https://www.opendesk.cc
+
+alastair_parvin:
+  name: Alastair Parvin
+  website: https://twitter.com/alastairparvin
+  job_title: Co-Founder
+  organisation: WikiHouse
+  organisation_website: http://www.wikihouse.cc

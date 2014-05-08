@@ -42,7 +42,6 @@ layout: base
             {% endif %}
           {% endfor %}
         </ul>
-        </div>
       </div>
     </div>
   </div>
@@ -60,11 +59,24 @@ layout: base
                   <a href="/feed.xml" title="Subscribe via RSS"
                       class="btn fake-tw-btn-inner">
                     <img src="/gfx/rss-icon.png" class="fake-tw-btn-icon" />
-                    <div class="fake-tw-btn-text">
+                    <div class="fake-tw-btn-text hidden-xxs">
                       <span class="hidden-xs">
                         Subscribe via RSS</span>
                       <span class="visible-xs">
                         Subscribe</span></div></a>
+                </div>
+              </div>
+              <div class="fake-tw-btn-container pull-right">
+                <div class="fake-tw-btn">
+                  <a href="https://twitter.com/intent/user?screen_name=open_making"
+                      title="Follow @open_making"
+                      class="btn fake-tw-btn-inner">
+                    <img src="/gfx/twitter-icon.png" class="fake-tw-btn-icon"
+                    /><div class="fake-tw-btn-text hidden-xxs">
+                      <span class="hidden-xs">
+                        Follow @open_making</span>
+                      <span class="visible-xs">
+                        Follow</span></div></a>
                 </div>
               </div>
             </div>
@@ -74,8 +86,7 @@ layout: base
             <hr />
           </div>
           {% for post in site.posts %}
-            {% capture partial %}{{ post.layout }}.partial.html{% endcapture %}
-            {% include {{partial}} %}
+            {% include post.partial.html %}
           {% endfor %}
         </div>
       </div>
@@ -83,4 +94,13 @@ layout: base
   </div>
 </section>
 
-{% include footer.partial.html %}
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <hr />
+        {% include footer.partial.html %}
+      </div>
+    </div>
+  </div>
+</footer>

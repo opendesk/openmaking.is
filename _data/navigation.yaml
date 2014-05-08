@@ -1,10 +1,26 @@
 - name: Home
   path: /
+  exact: true
 - name: Articles
   path: /articles/
+  category: articles
 - name: Videos
   path: /videos/
+  category: videos
 - name: Projects
   path: /projects/
+  category: projects
 - name: Contribute <span class="glyphicon glyphicon-edit"></span>
   path: /contribute/
+  exact: true
+  sections:
+    - name: New to GitHub Pages?
+      slug: new-to-github-pages
+    - name: Forking the repository
+      slug: forking-the-repository
+    - name: Making your changes
+      slug: making-your-changes
+    - name: Adding new content
+      slug: adding-new-content
+    - name: Submitting a pull request
+      slug: submitting-a-pull-request

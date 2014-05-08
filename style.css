@@ -3,7 +3,13 @@
 body {
   color: #000;
   display: block;
-  min-width: 420px;
+  min-width: 430px;
+  position: relative;
+}
+figure img {
+  max-width: 100%;
+  margin: 0.5em 0 1em;
+  padding: 0.5em 0;
   position: relative;
 }
 .nav-pills {
@@ -25,7 +31,7 @@ body {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  background: rgba(0,0,0,0.03);
+  background: rgba(0,0,0,0.05);
   border: 1px solid rgba(0,0,0,0.7);
   color: #000;
 }
@@ -35,6 +41,29 @@ body {
   vertical-align: text-top;
 }
 
+.nav-sidebar > li {
+  margin-bottom: 2px;
+  padding: 1px 0;
+}
+.nav-sidebar > li > a {
+  border-left: 4px solid rgba(0,0,0,0.05);
+  padding: 9px 16px;
+}
+.nav-sidebar > li > a:hover,
+.nav-sidebar > li > a:focus {
+  border-left: 4px solid rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0.05);
+}
+.nav-sidebar > li.active > a {
+  border-left: 4px solid black;
+  background-color: rgba(0,0,0,0.05);
+}
+.nav-sidebar > li.active > ul.nav > li > a {
+  padding: 4px 16px;
+  margin-left: 2px;
+  border-left: 2px solid #000;
+}
+
 a, a:hover, a:focus {
   color: black;
   outline: none;
@@ -42,8 +71,12 @@ a, a:hover, a:focus {
 a.no-visual:hover, a.no-visual:focus {
   text-decoration: none;
 }
+p {
+  font-size: 17px;
+  font-weight: 300;
+}
 p a {
-  font-weight: 600;
+  font-weight: 500;
 }
 p a.no-visual {
   font-weight: 400;
@@ -54,6 +87,11 @@ h2 {
   font-weight: 500;
   letter-spacing: 0.015em;
 }
+h2 .glyphicon {
+  margin: 3px 0.5em 0 1px;
+  vertical-align: text-top;
+}
+
 h3 {
   font-size: 22px;
   font-weight: 500;
@@ -65,7 +103,7 @@ p.description {
 }
 p.metadata {
   font-size: 12px;
-  font-style: italic;
+  font-weight: 300;
 }
 ol {
   list-style-position: inside;
@@ -74,17 +112,38 @@ ol {
 ol li {
   margin-bottom: 0.5em;
 }
-
+.post-thumbnail {
+  width: 160px;
+  height: 90px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 4px 12px 12px 0;
+  position: relative;
+}
+.post-thumbnail img {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 767px) {
+  .post-thumbnail {
+    width: 320px;
+    height: 180px;
+  }
+}
 /* layout */
 
 section {
   padding: 2em;
 }
-section.white {
+.white {
   background: #fff;
 }
-section.grey {
-  background-color: #f5f3f1;
+.grey {
+  /*background-color: #f5f3f1;
+  background-color: rgb(248, 248, 246);*/
+  background-color: rgba(0,0,0,0.05);
 }
 footer {
   padding: 1em 0 3em;
@@ -124,8 +183,29 @@ footer {
     font-size: 72px;
   }
 }
+
+.little-statement .statement-thin {
+  font-size: 18px;
+}
+.little-statement .making-bar {
+  float: right;
+  margin: -8px 8px 0 0;
+  width: 339px;
+}
+@media (max-width: 767px) {
+  .little-statement .making-bar {
+    float: none;
+    margin: 0 0 1em;
+    max-width: 100%;
+  }
+}
+
 .intro-text {
   padding: 1em 5%;
+  font-size: 21px;
+  font-weight: 300;
+}
+.intro-text p {
   font-size: 21px;
   font-weight: 300;
 }
@@ -133,7 +213,7 @@ footer {
   padding: 0 8px;
 }
 .listing-header {
-  padding: 1em 0em 0.5em;
+  padding: 1em 0em 0em;
 }
 .listing-item {
   padding-bottom: 0.8em;
@@ -142,6 +222,10 @@ footer {
 }
 .listing-item h3.listing-title {
   margin-bottom: 5px;
+}
+h3.listing-title .glyphicon {
+  margin: 2px 3px 0 1px;
+  vertical-align: text-top;
 }
 .listing-item p.description {
   margin-bottom: 10px;
@@ -161,6 +245,11 @@ footer {
 .no-wrap {
   white-space: nowrap;
 }
+@media (max-width: 550px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+}
 
 /* fake twitter button */
 
@@ -171,6 +260,7 @@ footer {
   white-space: nowrap;
   font-size: 13px;
   line-height: 26px;
+  margin-left: 8px;
 }
 .fake-tw-btn {
   max-width: 100%;
@@ -189,6 +279,7 @@ footer {
   height: 28px;
   margin-top: -1px;
   max-width: 98%;
+  min-width: 32px;
   overflow: hidden;
   position: relative;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);

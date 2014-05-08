@@ -1,15 +1,10 @@
 ---
-layout: base
+layout: main
 ---
 
-<section id="content">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-        {{ content }}
-      </div>
-    </div>
-  </div>
-</section>
+<h2 class="first-heading">
+  <a href="{{ page.url }}" class="no-visual">
+    {{ page.title }}</a>
+</h2>
 
-{% include footer.partial.html %}
+{{ content }}

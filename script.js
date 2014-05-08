@@ -1,8 +1,145 @@
 $(document).ready(
   function () {
-    $('.display-datetime').humaneDates();
+    $('.display-datetime').humaneDates({'lowercase': true});
   }
 );
 
-// https://github.com/zachleat/Humane-Dates jQuery plugin.
-function humaneDate(e,t){function u(e,t){var n=.1;if(e>=t&&e<=t*(1+n)){return t}return e}if(!e){return}var n={ago:"Ago",from:"",now:"Just Now",minute:"Minute",minutes:"Minutes",hour:"Hour",hours:"Hours",day:"Day",days:"Days",week:"Week",weeks:"Weeks",month:"Month",months:"Months",year:"Year",years:"Years"},r=[[60,n.now],[3600,n.minute,n.minutes,60],[86400,n.hour,n.hours,3600],[604800,n.day,n.days,86400],[2628e3,n.week,n.weeks,604800],[31536e3,n.month,n.months,2628e3],[Infinity,n.year,n.years,31536e3]],i=typeof e=="string",e=i?new Date((""+e).replace(/-/g,"/").replace(/[TZ]/g," ")):e,t=t||new Date,s=(t-e+(t.getTimezoneOffset()-(i?0:e.getTimezoneOffset()))*6e4)/1e3,o;if(s<0){s=Math.abs(s);o=n.from?" "+n.from:""}else{o=n.ago?" "+n.ago:""}for(var a=0,f=r[0];r[a];f=r[++a]){if(s<f[0]){if(a===0){return f[1]}var l=Math.ceil(u(s,f[3])/f[3]);return l+" "+(l!=1?f[2]:f[1])+(a>0?o:"")}}}if(typeof jQuery!="undefined"){jQuery.humaneDate=humaneDate;jQuery.fn.humaneDates=function(e){var t=jQuery.extend({lowercase:false},e);return this.each(function(){var e=jQuery(this),n=e.attr("datetime")||e.attr("title");n=humaneDate(n);if(n&&t["lowercase"]){n=n.toLowerCase()}if(n&&e.html()!=n){e.html(n)}})}}
+/*
+ * Javascript Humane Dates
+ * Copyright (c) 2008 Dean Landolt (deanlandolt.com)
+ * Re-write by Zach Leatherman (zachleat.com)
+ * Refactor by Chris Pearce (github.com/Chrisui)
+ *
+ * Adopted from the John Resig's pretty.js
+ * at http://ejohn.org/blog/javascript-pretty-date
+ * and henrah's proposed modification
+ * at http://ejohn.org/blog/javascript-pretty-date/#comment-297458
+ *
+ * Licensed under the MIT license.
+ */
+
+;(function(root){
+
+  var lang = {
+      ago: 'Ago',
+      from: 'Ago',
+      now: 'Just Now',
+      minute: 'Minute',
+      minutes: 'Minutes',
+      hour: 'Hour',
+      hours: 'Hours',
+      day: 'Day',
+      days: 'Days',
+      week: 'Week',
+      weeks: 'Weeks',
+      month: 'Month',
+      months: 'Months',
+      year: 'Year',
+      years: 'Years'
+    },
+    formats = [
+      [60, lang.now],
+      [3600, lang.minute, lang.minutes, 60], // 60 minutes, 1 minute
+      [86400, lang.hour, lang.hours, 3600], // 24 hours, 1 hour
+      [604800, lang.day, lang.days, 86400], // 7 days, 1 day
+      [2628000, lang.week, lang.weeks, 604800], // ~1 month, 1 week
+      [31536000, lang.month, lang.months, 2628000], // 1 year, ~1 month
+      [Infinity, lang.year, lang.years, 31536000] // Infinity, 1 year
+    ];
+
+  function normalize(val, single)
+  {
+    var margin = 0.1;
+    if(val >= single && val <= single * (1+margin)) {
+      return single;
+    }
+    return val;
+  }
+
+  root.humaneDate = function(date, compareTo){
+
+    if(!date) {
+      return;
+    }
+
+    var isString = typeof date == 'string',
+      date = isString ?
+            new Date(('' + date).replace(/-/g,"/").replace(/T|(?:\.\d+)?Z/g," ")) :
+            date,
+      compareTo = compareTo || new Date,
+      seconds = (compareTo - date +
+              (compareTo.getTimezoneOffset() -
+                // if we received a GMT time from a string, doesn't include time zone bias
+                // if we got a date object, the time zone is built in, we need to remove it.
+                (isString ? 0 : date.getTimezoneOffset())
+              ) * 60000
+            ) / 1000,
+      token;
+
+    if(seconds < 0) {
+      seconds = Math.abs(seconds);
+      token = lang.from ? ' ' + lang.from : '';
+    } else {
+      token = lang.ago ? ' ' + lang.ago : '';
+    }
+
+    /*
+     * 0 seconds && < 60 seconds        Now
+     * 60 seconds                       1 Minute
+     * > 60 seconds && < 60 minutes     X Minutes
+     * 60 minutes                       1 Hour
+     * > 60 minutes && < 24 hours       X Hours
+     * 24 hours                         1 Day
+     * > 24 hours && < 7 days           X Days
+     * 7 days                           1 Week
+     * > 7 days && < ~ 1 Month          X Weeks
+     * ~ 1 Month                        1 Month
+     * > ~ 1 Month && < 1 Year          X Months
+     * 1 Year                           1 Year
+     * > 1 Year                         X Years
+     *
+     * Single units are +10%. 1 Year shows first at 1 Year + 10%
+     */
+
+    for(var i = 0, format = formats[0]; formats[i]; format = formats[++i]) {
+      if(seconds < format[0]) {
+        if(i === 0) {
+          // Now
+          return format[1];
+        }
+
+        var val = Math.ceil(normalize(seconds, format[3]) / (format[3]));
+        return val +
+            ' ' +
+            (val != 1 ? format[2] : format[1]) +
+            (i > 0 ? token : ' ');
+      }
+    }
+  };
+
+  if(typeof jQuery != 'undefined') {
+    jQuery.fn.humaneDates = function(options)
+    {
+      var settings = jQuery.extend({
+        'lowercase': false
+      }, options);
+
+      return this.each(function()
+      {
+        var $t = jQuery(this),
+          date = $t.attr('datetime') || $t.attr('title');
+
+        date = humaneDate(date);
+
+        if(date && settings['lowercase']) {
+          date = date.toLowerCase();
+        }
+
+        if(date && $t.html() != date) {
+          // don't modify the dom if we don't have to
+          $t.html(date);
+        }
+      });
+    };
+  }
+})(this);
