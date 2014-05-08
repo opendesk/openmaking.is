@@ -1,9 +1,8 @@
 ---
 title: CNC Cutting Edie Stool
 description: |
-    What if, instead of architects creating buildings for those who can
-    afford to commission them, regular people could design and build
-    their own houses?
+    Tongue in cheek video from Pedro Terra Lab in Brasil showing CNC
+    cutting and dispatch of a Valchromat Edie Stool.
 author: thruflo
 layout: video
 source: vimeo
