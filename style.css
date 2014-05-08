@@ -233,6 +233,9 @@ footer {
   font-size: 21px;
   font-weight: 300;
 }
+.video-wrapper {
+  margin-bottom: 1em;
+}
 .page-content {
   padding: 0 8px;
 }
