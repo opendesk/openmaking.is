@@ -1,0 +1,49 @@
+---
+layout: main
+---
+
+<div class="listing-header clearfix">
+  <div class="pull-right">
+    <div class="fake-tw-btn-container pull-right">
+      <div class="fake-tw-btn">
+        <a href="/{{ page.target }}.xml" title="Subscribe via RSS"
+            class="btn fake-tw-btn-inner">
+          <img src="/gfx/rss-icon.png" class="fake-tw-btn-icon" />
+          <div class="fake-tw-btn-text hidden-xxs">
+            <span class="hidden-xs">
+              Subscribe to {{ page.title }}</span>
+            <span class="visible-xs">
+              Subscribe</span></div></a>
+      </div>
+    </div>
+    <div class="fake-tw-btn-container pull-right">
+      <div class="fake-tw-btn">
+        <a href="https://twitter.com/intent/user?screen_name=open_making"
+            title="Follow @open_making"
+            class="btn fake-tw-btn-inner">
+          <img src="/gfx/twitter-icon.png" class="fake-tw-btn-icon"
+          /><div class="fake-tw-btn-text hidden-xxs">
+            <span class="hidden-xs">
+              Follow @open_making</span>
+            <span class="visible-xs">
+              Follow</span></div></a>
+      </div>
+    </div>
+  </div>
+  <h2 class="first-heading">
+    <a href="{{ page.url }}" class="no-visual">
+      {% if page.target == 'videos' %}
+        <span class="glyphicon glyphicon-facetime-video"></span>
+      {% elsif page.target == 'projects' %}
+        <span class="glyphicon glyphicon-link"></span>
+      {% endif %}
+      {{ page.title }}</a>
+  </h2>
+  <hr />
+</div>
+
+{{ content }}
+
+{% for post in site.categories[page.target] %}
+  {% include post.partial.html %}
+{% endfor %}

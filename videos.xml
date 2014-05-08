@@ -5,11 +5,11 @@ layout: none
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
+    <title>{{ site.name | xml_escape }} Videos</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:20 %}
+    <atom:link href="{{ site.url }}/videos.xml" rel="self" type="application/rss+xml" />
+    {% for post in site.categories.videos limit:12 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.excerpt | xml_escape }}</description>

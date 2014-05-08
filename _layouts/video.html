@@ -25,7 +25,7 @@ layout: main
               allowfullscreen>
     </iframe>
   {% elsif page.source == 'vimeo' %}
-    <iframe src="//player.vimeo.com/video/70571785"
+    <iframe src="//player.vimeo.com/video/{{ page.source_id }}"
         width="560"
         height="315"
         frameborder="0"
@@ -37,3 +37,6 @@ layout: main
 </p>
 
 {{ content }}
+
+{% assign post = page %}
+{% include metadata.partial.html %}

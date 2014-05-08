@@ -85,7 +85,7 @@ layout: base
             </h2>
             <hr />
           </div>
-          {% for post in site.posts %}
+          {% for post in site.posts limit:10 %}
             {% include post.partial.html %}
           {% endfor %}
         </div>

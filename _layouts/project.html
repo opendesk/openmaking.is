@@ -17,4 +17,11 @@ layout: main
     {{ page.title }} &mdash; {{ page.website }}</a>
 </h2>
 
+<p>
+  {{ page.description }}
+</p>
+
 {{ content }}
+
+{% assign post = page %}
+{% include metadata.partial.html %}

@@ -1,6 +1,6 @@
 <ul class="nav nav-sidebar nav-stacked">
   {% for item in site.data.navigation %}
-    {% capture active %}{% if item.exact and page.url == item.path %}active{% elsif page.categories contains item.category %}active{% endif %}{% endcapture %}
+    {% capture active %}{% if page.url == item.path %}active{% elsif page.categories contains item.category %}active{% endif %}{% endcapture %}
     <li class="{{ active }}">
       <a href="{{ item.path }}">
         <span class="no-wrap">
