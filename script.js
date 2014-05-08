@@ -8,7 +8,23 @@ $(document).ready(
     $('[data-target="articles"]').each(
       function () {
         var $container = $(this);
+        var $links = $($container.data('link-selector'));
         var $items = $container.find('.listing-item');
+        var set_active_state = function (token) {
+          $links.each(
+            function () {
+              var $item = $(this);
+              var $parent = $item.parent('li');
+              var target = $item.attr('href').split('#').slice(-1)[0];
+              if (token && token == target) {
+                $parent.addClass('active');
+              }
+              else {
+                $parent.removeClass('active');
+              }
+            }
+          );
+        } 
         var filter_by_topic = function (topic) {
           $items.each(
             function () {
@@ -22,7 +38,7 @@ $(document).ready(
             }
           );
         };
-        var filter_by_hash = function (only_if_topic_exists) {
+        var handle_hash = function (only_if_topic_exists) {
           var topic = '';
           if (location.hash) {
             topic = location.hash.slice(1);
@@ -30,13 +46,18 @@ $(document).ready(
           if (topic || !only_if_topic_exists) {
             filter_by_topic(topic);
           }
+          set_active_state(topic);
         };
-        $(window).on('hashchange', filter_by_hash);
-        filter_by_hash(true);
+        $(window).on('hashchange', handle_hash);
+        handle_hash(true);
       }
     );
   }
 );
+
+String.prototype.endsWith = function (suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 /*
  * Javascript Humane Dates

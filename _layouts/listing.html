@@ -43,7 +43,8 @@ layout: main
 
 {{ content }}
 
-<div class="listing" data-target="{{ page.target }}">
+<div class="listing" data-target="{{ page.target }}"
+    data-link-selector=".nav-sidebar .nav > li > a">
   {% for post in site.categories[page.target] %}
     {% include post.partial.html %}
   {% endfor %}
