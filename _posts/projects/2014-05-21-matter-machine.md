@@ -8,7 +8,7 @@ categories:
 - projects
 ---
 
-MatterMachine is an product customisation toolkit providing powerful in-browser
+MatterMachine is a product customisation toolkit providing powerful in-browser
 design tools to build and collaborate on parametric product models.
 
 MatterMachine is both a product and a company. Based in beautiful New Zealand,
