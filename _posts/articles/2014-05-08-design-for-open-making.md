@@ -12,3 +12,25 @@ tags:
 ---
 
 Coming soon.
+
+[
+balance between general intro
+challenges and principals
+]
+
+design for contribution or not / iteration, evolution / social
+vs design for open making
+
+technical thing of design for manufacturing process
+design tools, standards, learning resources
+things to bear in mind
+- tolerances
+- localisation e.g.: material supply
+- accessibility / access to hardware as platform (targeting latest machines
+  vs every CNC...)
+
+warranty, legal issues of product design
+challenge of quality and warranty for dist mfr products
+
+licensing
+publishing
