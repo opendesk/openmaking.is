@@ -12,12 +12,12 @@ tags:
 ---
 
 
-OpenDesk Data Flow & Processing Review
+## OpenDesk Data Flow & Processing Review
 
 The unique community driven structure of OpenDesk presents some interesting challenges that have not previously been addressed by the manufacturing industry. A wide range of designers and makers exist within the global OpenDesk community and each one is working to different standards. The overriding philosophy of OpenDesk is to embrace this variety and build a framework which every designer and maker can operate in, using their own individual processes, software and machines. Whilst engineering and design companies can impose standards and limitations for their designers to adhere to, OpenDesk must process a huge range of designs and produce a standardised design file that every maker can work with despite their machine, units of measurement or material.
 
 
-The Problem Details
+## The Problem Details
 
 Currently OpenDesk receives 2D vector drawing files from designers, typically in a file type called DXF. Some designers work directly in this format, but others work in a 3D modelling CAD (Computer Aided Design) package, then flattern their designs in to the 2D DXF format. The 2D file contains critical information on different layers. For example one layer will contain a series of lines shown in a specific colour. These lines on each layer define similar features, an example of similar features could be 6MM diameter holes drilled to a depth of 10MM, or on another layer a line that defines the outer profile of a part.
 
