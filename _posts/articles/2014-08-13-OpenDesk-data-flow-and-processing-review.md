@@ -31,7 +31,7 @@ Imagine a system that could import both 2D or 3D design files from the Designers
 
 The framework of the solution is diagrammatically shown below. There are three clear stages within this workflow framework; Designer, In-house (manual) and In-house (automatic).
 
-![alt tag](https://github.com/harrykeen18/openmaking.is/gfx/Framework2.png)
+![alt tag](https://github.com/harrykeen18/openmaking.is/blob/gh-pages/gfx/Bootcamp-Fork.png)
 
 The first data transition from designer to Opendesk can occur in 3D or 2D. Many different 3D file formats exist and most are specific to certain CAD programs. Conveniently there exists a standard "dumb solid" file format called .STP (step). This file contains the basic information required for CAD software to construct an accurate 3D model. It is becoming an standard within the industry to transfer 3D data in this format and will therefore will be used by OpenDesk to receive models from designers. 2D designs can also be transferred in .DXF format as all major CAD platforms can also import this file type.
 
