@@ -59,7 +59,7 @@ CIMtech has been outlined in this process however any nesting program that integ
 
 ## Further Work
 
-The dotted lines show software flows that have yet to be investigated. NX shows promise as an all encompassing solution and both Solidworks and SolidEdge look like they can provide a solution alongside a 3rd CAM package.
+The dotted lines show software flows that have yet to be investigated. NX shows promise as an all encompassing solution and both Solidworks and SolidEdge look like they can provide a solution alongside a 3rd party CAM package.
 
 Check back here soon for the results!
 
