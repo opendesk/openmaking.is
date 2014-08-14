@@ -14,7 +14,7 @@ tags:
 
 ## OpenDesk Data Flow & Processing Review
 
-The unique community driven structure of OpenDesk presents some interesting challenges that have not previously been addressed by the manufacturing industry. A wide range of designers and makers exist within the global OpenDesk community and each one is working to different standards. The overriding philosophy of OpenDesk is to embrace this variety and build a framework which every designer and maker can operate in, using their own individual processes, software and machines. Whilst engineering and design companies can impose standards and limitations for their designers to adhere to, OpenDesk must process a huge range of designs and produce a standardised design file that every maker can work with despite their machine, units of measurement or material.
+>The unique community driven structure of OpenDesk presents some interesting challenges that have not previously been >addressed by the manufacturing industry. A wide range of designers and makers exist within the global OpenDesk >community and each one is working to different standards. The overriding philosophy of OpenDesk is to embrace this >variety and build a framework which every designer and maker can operate in, using their own individual processes, >software and machines. Whilst engineering and design companies can impose standards and limitations for their designers >to adhere to, OpenDesk must process a huge range of designs and produce a standardised design file that every maker can >work with despite their machine, units of measurement or material.
 
 
 ## The Problem Details
