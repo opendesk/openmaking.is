@@ -43,7 +43,7 @@ The figure shows some of the software routes explored so far. The circle shows a
 
 ## Analysis
 
-An example model was passed through each path shown to gain an understanding of the CAD packages worked and how efficiently they completed the process. The process was iterative and new paths were invented and developed as the analysis was conducted.
+An example model was passed through each path shown to gain an understanding of the software involved and how efficiently the path completed the process. The analysis was iterative and new paths were invented and developed as the analysis was conducted.
 
 ##Path 1: Inventor - CIMtech - AutoCAD
 
